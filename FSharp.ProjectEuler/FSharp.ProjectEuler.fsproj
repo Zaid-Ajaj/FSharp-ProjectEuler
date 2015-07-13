@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>9d9f7754-9856-4b03-aa4f-6cadd31cbd31</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FSharp.ProjectEuler</RootNamespace>
+    <AssemblyName>FSharp.ProjectEuler</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
+    <Name>FSharp.ProjectEuler</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\FSharp.ProjectEuler.XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Release\FSharp.ProjectEuler.XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Program.fs" />
+    <None Include="App.config" />
+    <None Include="Scripts\1 - Multiple of 3 and 5.fsx" />
+    <None Include="Scripts\10 - Summation of primes.fsx" />
+    <None Include="Scripts\11 - Largest product in a grid.fsx" />
+    <None Include="Scripts\12 - Highly divisible triangular number.fsx" />
+    <None Include="Scripts\13 - Large sum.fsx" />
+    <None Include="Scripts\14 - Longest Collatz sequence.fsx" />
+    <None Include="Scripts\15 - Lattice paths.fsx" />
+    <None Include="Scripts\16 - Power digit sum.fsx" />
+    <None Include="Scripts\17 - Number Letter count %28getWord%29.fsx" />
+    <None Include="Scripts\2 - Even Fibonacci numbers.fsx" />
+    <None Include="Scripts\20 - Factorial digit sum.fsx" />
+    <None Include="Scripts\21 - Amicable numbers.fsx" />
+    <None Include="Scripts\22 - Names scores.fsx" />
+    <None Include="Scripts\23 - Non-abundant sums.fsx" />
+    <None Include="Scripts\24 - Lexicographic permutations.fsx" />
+    <None Include="Scripts\25 - 1000-digit fibonacci number.fsx" />
+    <None Include="Scripts\27 - Quadratic Primes.fsx" />
+    <None Include="Scripts\29 - Distinct powers.fsx" />
+    <None Include="Scripts\3 - Largest prime factor.fsx" />
+    <None Include="Scripts\4 - Largest Palindrome product.fsx" />
+    <None Include="Scripts\48 - Self Powers.fsx" />
+    <None Include="Scripts\5 - Smallest multiple.fsx" />
+    <None Include="Scripts\6 - Sum square difference.fsx" />
+    <None Include="Scripts\7 - The 10001th prime.fsx" />
+    <None Include="Scripts\8 - Largest product in a series.fsx" />
+    <None Include="Scripts\9 - Special pythagreon triplet.fsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\data\first million primes.txt" />
+    <Content Include="Scripts\data\p022_names.txt" />
+  </ItemGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
